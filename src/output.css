@@ -651,6 +651,22 @@ video {
   margin-top: 0.75rem;
 }
 
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.mr-\[50px\] {
+  margin-right: 50px;
+}
+
+.ml-\[200px\] {
+  margin-left: 200px;
+}
+
+.ml-\[150px\] {
+  margin-left: 150px;
+}
+
 .block {
   display: block;
 }
