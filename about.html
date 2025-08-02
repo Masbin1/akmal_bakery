@@ -18,12 +18,37 @@
       >
         <!-- Left Menu -->
         <nav class="flex items-center gap-8 font-bold text-sm">
-          <a href="index.html" class="hover:text-yellow-600">HOME</a>
-          <a href="about.html" class="text-yellow-600">ABOUT US</a>
+          <a href="index.html" class="text-yellow-600">HOME</a>
+
+          <!-- Dropdown ABOUT US -->
+          <div class="relative">
+            <button
+              onclick="toggleDropdown('aboutDropdown')"
+              class="flex items-center gap-1 hover:text-yellow-600"
+            >
+              ABOUT US <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div
+              id="aboutDropdown"
+              class="hidden absolute bg-white shadow-lg rounded-md mt-2 w-40"
+            >
+              <a
+                href="about.html#sejarah"
+                class="block px-4 py-2 hover:bg-yellow-100"
+                >Sejarah</a
+              >
+              <a
+                href="about.html#profile"
+                class="block px-4 py-2 hover:bg-yellow-100"
+                >Profile</a
+              >
+            </div>
+          </div>
+
           <a href="product.html" class="hover:text-yellow-600">PRODUCT</a>
         </nav>
 
-        <!-- Logo Centered (Ganti Teks Jadi Gambar) -->
+        <!-- Logo Centered -->
         <div class="absolute left-1/2 transform -translate-x-1/2">
           <a href="index.html">
             <img
@@ -39,33 +64,33 @@
           <a href="lokasi.html" class="hover:text-yellow-600">LOKASI</a>
 
           <!-- Dropdown KONTAK -->
-          <div class="relative group">
-            <div
-              class="flex items-center gap-1 hover:text-yellow-600 cursor-pointer"
+          <div class="relative">
+            <button
+              onclick="toggleDropdown('kontakDropdown')"
+              class="flex items-center gap-1 hover:text-yellow-600"
             >
-              <span>KONTAK</span>
-              <i class="fas fa-chevron-down text-xs"></i>
-            </div>
-            <!-- Isi Dropdown -->
+              KONTAK <i class="fas fa-chevron-down text-xs"></i>
+            </button>
             <div
-              class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-40"
+              id="kontakDropdown"
+              class="hidden absolute bg-white shadow-lg rounded-md mt-2 w-40"
             >
               <a
-                href="https://wa.me/628123456789"
+                href="https://api.whatsapp.com/send/?phone=6285159951207&text&type=phone_number&app_absent=0"
                 target="_blank"
                 class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100"
               >
                 <i class="fab fa-whatsapp text-green-500"></i> WhatsApp
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/akmal.bkry"
                 target="_blank"
                 class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100"
               >
                 <i class="fab fa-facebook text-blue-600"></i> Facebook
               </a>
               <a
-                href="https://goo.gl/maps"
+                href="https://maps.app.goo.gl/nqqEuFVbhXzS5Egw6"
                 target="_blank"
                 class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100"
               >
@@ -78,6 +103,25 @@
         </nav>
       </div>
     </header>
+
+    <!-- SCRIPT UNTUK DROPDOWN -->
+    <script>
+      function toggleDropdown(id) {
+        document.querySelectorAll('[id$="Dropdown"]').forEach((drop) => {
+          if (drop.id !== id) drop.classList.add("hidden");
+        });
+        document.getElementById(id).classList.toggle("hidden");
+      }
+
+      // Klik di luar dropdown untuk menutup
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".relative")) {
+          document
+            .querySelectorAll('[id$="Dropdown"]')
+            .forEach((drop) => drop.classList.add("hidden"));
+        }
+      });
+    </script>
 
     <!-- ABOUT US SECTION -->
     <section class="bg-[#fffdd0] text-center py-10">
