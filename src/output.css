@@ -695,6 +695,10 @@ video {
   height: 6rem;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-36 {
   width: 9rem;
 }
@@ -725,6 +729,10 @@ video {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-1 {
@@ -845,6 +853,11 @@ video {
 .bg-\[\#fffdd0\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 253 208 / var(--tw-bg-opacity, 1));
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {
